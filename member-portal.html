@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Membership Portal - IIPM</title>
+    <meta name="description" content="IIPM membership portal dashboard for status, CPD, renewals, documents and upgrade pathway.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="login">
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="index.html" aria-label="IIPM home">
+          <img class="brand-logo" src="assets/iipm-logo.png" alt="IIPM logo">
+          <span class="brand-text"><strong>IIPM</strong><span>Integrated Institute of Professional Management</span></span>
+        </a>
+        <nav class="nav-links" data-nav-links aria-label="Main navigation">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="programmes.html" data-nav="programmes">Programmes</a>
+          <a href="membership.html" data-nav="membership">Membership</a>
+          <a href="elearning.html" data-nav="elearning">E-Learning</a>
+          <a href="verification.html" data-nav="verification">Verify</a>
+          <a href="corporate.html" data-nav="corporate">Corporate</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="login.html" data-nav="login">Login</a>
+        </nav>
+        <div class="nav-actions"><a class="btn btn-outline" href="login.html"><i data-lucide="log-out"></i> Logout</a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="portal-banner member">
+        <div class="section-inner portal-banner-inner">
+          <div>
+            <span class="eyebrow"><i data-lucide="badge-check"></i> Membership portal</span>
+            <h1>Membership dashboard</h1>
+            <p>Manage status, CPD, renewal, documents and upgrade eligibility from one workspace.</p>
+          </div>
+          <div class="account-chip"><i data-lucide="shield-check"></i> Full Member - MIIPM</div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="section-inner portal-shell">
+          <aside class="card portal-side">
+            <a class="active" href="member-portal.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="#"><i data-lucide="id-card"></i> Member ID</a>
+            <a href="#"><i data-lucide="book-open-check"></i> CPD Record</a>
+            <a href="#"><i data-lucide="receipt"></i> Renewals</a>
+            <a href="#"><i data-lucide="file-badge"></i> Documents</a>
+            <a href="learner-portal.html"><i data-lucide="graduation-cap"></i> E-Learning</a>
+            <a href="login.html"><i data-lucide="log-out"></i> Logout</a>
+          </aside>
+          <div class="portal-main">
+            <div class="dashboard-kpis">
+              <article class="card kpi-card"><span>Status</span><strong>Active</strong><small>Valid through 31 Dec 2026</small></article>
+              <article class="card kpi-card"><span>Category</span><strong>MIIPM</strong><small>Full Member</small></article>
+              <article class="card kpi-card"><span>CPD points</span><strong>16/20</strong><small>Annual target</small></article>
+              <article class="card kpi-card"><span>Renewal due</span><strong>NGN 25,000</strong><small>Annual subscription</small></article>
+            </div>
+
+            <div class="dashboard-top">
+              <section class="card dashboard-panel">
+                <span class="eyebrow">Member record</span>
+                <h2>Member ID: IIPM-MI-2026-1842</h2>
+                <p>Designatory letters may be used while the annual subscription is active. The member record is available through private verification.</p>
+                <div class="grid grid-2 compact-grid">
+                  <article class="mini-record"><span>Admission category</span><strong>Full Member</strong></article>
+                  <article class="mini-record"><span>Designatory letters</span><strong>MIIPM</strong></article>
+                  <article class="mini-record"><span>Subscription</span><strong>Active</strong></article>
+                  <article class="mini-record"><span>Upgrade path</span><strong>Fellow review</strong></article>
+                </div>
+              </section>
+              <section class="card dashboard-panel action-panel">
+                <span class="eyebrow">Next action</span>
+                <h2>Complete CPD target</h2>
+                <p>4 CPD points remaining for the annual target.</p>
+                <a class="btn btn-primary" href="learner-portal.html"><i data-lucide="book-open-check"></i> Continue CPD</a>
+              </section>
+            </div>
+
+            <div class="grid grid-3">
+              <article class="card feature-card"><span class="icon-wrap"><i data-lucide="file-badge"></i></span><h3>Certificate</h3><p>Download membership certificate and digital ID.</p></article>
+              <article class="card feature-card payment-card"><span class="icon-wrap"><i data-lucide="receipt"></i></span><h3>Payments</h3><p>Pay renewals or approved balances using the official IIPM payment links.</p><div class="button-stack"><a class="btn btn-primary" href="https://paystack.com/pay/iipmnigeria" target="_blank" rel="noopener"><i data-lucide="credit-card"></i> Pay NGN</a><a class="btn btn-soft" href="https://paystack.com/pay/iipm" target="_blank" rel="noopener"><i data-lucide="globe-2"></i> Pay USD</a></div></article>
+              <article class="card feature-card"><span class="icon-wrap"><i data-lucide="arrow-up-right"></i></span><h3>Upgrade</h3><p>Request category review when experience and CPD evidence are ready.</p></article>
+            </div>
+
+            <section class="card dashboard-panel">
+              <span class="eyebrow">Payment details</span>
+              <h2>Official IIPM payment channels</h2>
+              <div class="grid grid-2 compact-grid">
+                <article class="mini-record"><span>Bank</span><strong>Guaranty Trust Bank PLC</strong></article>
+                <article class="mini-record"><span>Account number</span><strong>0588546395</strong></article>
+                <article class="mini-record"><span>Account name</span><strong>Integrated Institute of Professional Management</strong></article>
+                <article class="mini-record"><span>Proof of payment</span><strong>finance@iipmi.org</strong></article>
+              </div>
+            </section>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Requirement</th><th>Current record</th><th>Status</th><th>Next step</th></tr></thead>
+                <tbody>
+                  <tr><td>Annual subscription</td><td>Paid through 2026</td><td><span class="status green">Active</span></td><td>Renew before expiry</td></tr>
+                  <tr><td>CPD target</td><td>16 of 20 points</td><td><span class="status gold">In progress</span></td><td>Complete member education</td></tr>
+                  <tr><td>Verification profile</td><td>Member ID and certificate active</td><td><span class="status green">Ready</span></td><td>Share ID when required</td></tr>
+                  <tr><td>Upgrade readiness</td><td>Fellow review not submitted</td><td><span class="status gold">Pending</span></td><td>Upload evidence</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learner Portal - IIPM</title>
+    <meta name="description" content="IIPM learner portal dashboard for courses, assessments, resources and certificates.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="login">
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="index.html" aria-label="IIPM home">
+          <img class="brand-logo" src="assets/iipm-logo.png" alt="IIPM logo">
+          <span class="brand-text"><strong>IIPM</strong><span>Integrated Institute of Professional Management</span></span>
+        </a>
+        <nav class="nav-links" data-nav-links aria-label="Main navigation">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="programmes.html" data-nav="programmes">Programmes</a>
+          <a href="membership.html" data-nav="membership">Membership</a>
+          <a href="elearning.html" data-nav="elearning">E-Learning</a>
+          <a href="verification.html" data-nav="verification">Verify</a>
+          <a href="corporate.html" data-nav="corporate">Corporate</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="login.html" data-nav="login">Login</a>
+        </nav>
+        <div class="nav-actions"><a class="btn btn-outline" href="login.html"><i data-lucide="log-out"></i> Logout</a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="portal-banner">
+        <div class="section-inner portal-banner-inner">
+          <div>
+            <span class="eyebrow"><i data-lucide="graduation-cap"></i> E-learning portal</span>
+            <h1>Learner dashboard</h1>
+            <p>Welcome back, Amina. Continue your courses, assessments and certificate pathway.</p>
+          </div>
+          <div class="account-chip"><i data-lucide="user-check"></i> Course Learner</div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="section-inner portal-shell">
+          <aside class="card portal-side">
+            <a class="active" href="learner-portal.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="#"><i data-lucide="book-open"></i> My Courses</a>
+            <a href="#"><i data-lucide="file-question"></i> Assessments</a>
+            <a href="#"><i data-lucide="award"></i> Certificates</a>
+            <a href="#"><i data-lucide="folder-open"></i> Resources</a>
+            <a href="member-portal.html"><i data-lucide="badge-check"></i> Membership</a>
+            <a href="login.html"><i data-lucide="log-out"></i> Logout</a>
+          </aside>
+          <div class="portal-main">
+            <div class="dashboard-kpis">
+              <article class="card kpi-card"><span>Active courses</span><strong>3</strong><small>2 in progress</small></article>
+              <article class="card kpi-card"><span>Overall progress</span><strong>72%</strong><small>Strategic pathway</small></article>
+              <article class="card kpi-card"><span>Pending assessments</span><strong>2</strong><small>Due this week</small></article>
+              <article class="card kpi-card"><span>Certificates</span><strong>1</strong><small>Ready to download</small></article>
+            </div>
+
+            <div class="dashboard-top">
+              <section class="card dashboard-panel">
+                <span class="eyebrow">Current pathway</span>
+                <h2>Strategic Project Management and Governance</h2>
+                <p>Executive weekend cohort with live classes, practical tools, case studies, assessments and templates.</p>
+                <div class="progress-row">
+                  <div class="progress-item">
+                    <div class="progress-label"><span>PMFC Foundation</span><span>100%</span></div>
+                    <div class="bar"><span style="width: 100%"></span></div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="progress-label"><span>CAPM Associate</span><span>72%</span></div>
+                    <div class="bar"><span style="width: 72%"></span></div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="progress-label"><span>CPMP Professional</span><span>18%</span></div>
+                    <div class="bar"><span style="width: 18%"></span></div>
+                  </div>
+                </div>
+              </section>
+              <section class="card dashboard-panel action-panel">
+                <span class="eyebrow">Next session</span>
+                <h2>Friday, 6:00 PM</h2>
+                <p>Risk, issue and change control workshop.</p>
+                <a class="btn btn-primary" href="#"><i data-lucide="video"></i> Join class</a>
+              </section>
+            </div>
+
+            <div class="grid grid-3">
+              <article class="card feature-card"><span class="icon-wrap"><i data-lucide="play-circle"></i></span><h3>Next lesson</h3><p>Governance controls for multi-stakeholder projects.</p></article>
+              <article class="card feature-card"><span class="icon-wrap"><i data-lucide="clipboard-check"></i></span><h3>Assessment</h3><p>CAPM checkpoint quiz is open.</p></article>
+              <article class="card feature-card"><span class="icon-wrap"><i data-lucide="download"></i></span><h3>Resources</h3><p>Project charter and board report templates.</p></article>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Course</th><th>Mode</th><th>Progress</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Strategic Project Management and Governance</td><td>Executive weekend</td><td>72%</td><td><span class="status green">Active</span></td></tr>
+                  <tr><td>AI for Professionals and Managers</td><td>Self-paced</td><td>24%</td><td><span class="status green">Active</span></td></tr>
+                  <tr><td>Professional Ethics and Governance</td><td>Member education</td><td>0%</td><td><span class="status gold">Not started</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
