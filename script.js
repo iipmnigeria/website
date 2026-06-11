@@ -1,4 +1,4 @@
-﻿const navToggle = document.querySelector("[data-menu-toggle]");
+const navToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 
 if (navToggle && navLinks) {
@@ -44,6 +44,93 @@ document.querySelectorAll("[data-course-filter]").forEach((button) => {
   });
 });
 
+const currentPageFile = window.location.pathname.split("/").pop() || "";
+const isGeneratedCoursePage =
+  /^course-.*\.html$/.test(currentPageFile) &&
+  currentPageFile !== "course-application.html" &&
+  currentPageFile !== "course-strategy.html";
+
+if (isGeneratedCoursePage) {
+  document.querySelectorAll('a[href="contact.html"]').forEach((link) => {
+    if (link.textContent.trim().toLowerCase().includes("apply")) {
+      link.href = `course-application.html?course=${encodeURIComponent(currentPageFile)}`;
+    }
+  });
+}
+
+if (currentPageFile === "programmes.html") {
+  document.querySelectorAll('a[href="contact.html"]').forEach((link) => {
+    const label = link.textContent.trim().toLowerCase();
+    if (label.includes("apply") || label.includes("register interest")) {
+      link.href = "course-application.html";
+    }
+  });
+}
+
+document.querySelectorAll(".course-catalogue-card").forEach((card) => {
+  if (card.querySelector('a[href^="course-application.html"]')) return;
+
+  const viewCourseLink = card.querySelector('a.btn[href^="course-"][href$=".html"]');
+  if (!viewCourseLink) return;
+
+  const courseSlug = viewCourseLink.getAttribute("href");
+  const applyLink = document.createElement("a");
+  applyLink.className = "btn btn-outline";
+  applyLink.href = `course-application.html?course=${encodeURIComponent(courseSlug)}`;
+  applyLink.innerHTML = '<i data-lucide="send"></i> Apply';
+
+  const buttonStack = viewCourseLink.closest(".button-stack");
+  if (buttonStack) {
+    buttonStack.appendChild(applyLink);
+  } else {
+    const wrapper = document.createElement("div");
+    wrapper.className = "button-stack";
+    viewCourseLink.replaceWith(wrapper);
+    wrapper.appendChild(viewCourseLink);
+    wrapper.appendChild(applyLink);
+  }
+});
+
+const courseApplicationSelect = document.querySelector("[data-course-application-select]");
+
+if (courseApplicationSelect) {
+  const selectedCourseFields = {
+    title: document.querySelector("[data-selected-course-title]"),
+    category: document.querySelector("[data-selected-course-category]"),
+    type: document.querySelector("[data-selected-course-type]"),
+    delivery: document.querySelector("[data-selected-course-delivery]"),
+    duration: document.querySelector("[data-selected-course-duration]"),
+    deadline: document.querySelector("[data-selected-course-deadline]"),
+    applicationFee: document.querySelector("[data-selected-application-fee]"),
+    memberTotal: document.querySelector("[data-selected-member-total]"),
+    nonMemberTotal: document.querySelector("[data-selected-non-member-total]")
+  };
+
+  const updateCourseApplicationSummary = () => {
+    const option = courseApplicationSelect.selectedOptions[0];
+    if (!option || !option.value) return;
+
+    selectedCourseFields.title.textContent = option.dataset.title || option.textContent;
+    selectedCourseFields.category.textContent = option.dataset.category || "Course category";
+    selectedCourseFields.type.textContent = option.dataset.type || "To be advised";
+    selectedCourseFields.delivery.textContent = option.dataset.delivery || "To be advised";
+    selectedCourseFields.duration.textContent = option.dataset.duration || "To be advised";
+    selectedCourseFields.deadline.textContent = option.dataset.deadline || "To be advised";
+    selectedCourseFields.applicationFee.textContent = option.dataset.applicationFee || "To be advised";
+    selectedCourseFields.memberTotal.textContent = option.dataset.memberTotal || "Fee on request";
+    selectedCourseFields.nonMemberTotal.textContent = option.dataset.nonMemberTotal || "Fee on request";
+  };
+
+  const selectedCourse = new URLSearchParams(window.location.search).get("course");
+  if (selectedCourse) {
+    const matchingOption = courseApplicationSelect.querySelector(`option[value="${CSS.escape(selectedCourse)}"]`);
+    if (matchingOption) courseApplicationSelect.value = selectedCourse;
+  }
+
+  courseApplicationSelect.addEventListener("change", updateCourseApplicationSummary);
+  updateCourseApplicationSummary();
+}
+
 const verifyForm = document.querySelector("[data-verify-form]");
 const verifyResult = document.querySelector("[data-verify-result]");
 
@@ -73,4 +160,3 @@ if (window.lucide) {
     }
   });
 }
-
