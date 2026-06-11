@@ -6,25 +6,88 @@
     <title>Course Application - IIPM</title>
     <meta name="description" content="Apply for an IIPM professional certification course, live cohort or self-study access.">
     <link rel="stylesheet" href="styles.css">
+    <style>
+      .brand-logo-mark {
+        display: inline-grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        background: #0a3761;
+        color: #f08a12;
+        border: 3px solid #f08a12;
+        font-weight: 900;
+        letter-spacing: 0;
+        box-shadow: 0 8px 22px rgba(21, 36, 47, 0.12);
+      }
+      .application-hero-fast {
+        min-height: 315px;
+        background:
+          linear-gradient(135deg, rgba(6, 34, 58, 0.98), rgba(9, 92, 103, 0.92) 58%, rgba(240, 138, 18, 0.86)),
+          radial-gradient(circle at 84% 24%, rgba(255, 255, 255, 0.24), transparent 30%);
+      }
+      .application-hero-fast::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
+        background-size: 44px 44px;
+        opacity: 0.22;
+      }
+      .application-hero-fast .section-inner {
+        padding-top: 64px;
+      }
+      .quick-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .quick-points span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 8px 13px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        color: #fff;
+        font-weight: 800;
+        font-size: 0.88rem;
+      }
+      .compact-list li { gap: 8px; }
+      .text-icon { color: #f08a12; font-weight: 900; }
+      .course-apply-actions { margin-top: 22px; }
+      @media (max-width: 720px) {
+        .application-hero-fast { min-height: 285px; }
+        .application-hero-fast .section-inner { padding-top: 48px; }
+        .quick-points span { width: 100%; border-radius: 8px; }
+      }
+    </style>
   </head>
   <body data-page="programmes">
     <header class="site-header">
       <div class="nav-shell">
-        <a class="brand" href="index.html"><img class="brand-logo" src="assets/iipm-logo.png" alt="IIPM logo"><span class="brand-text"><strong>IIPM</strong><span>Integrated Institute of Professional Management</span></span></a>
+        <a class="brand" href="index.html"><span class="brand-logo-mark" aria-label="IIPM logo">IIPM</span><span class="brand-text"><strong>IIPM</strong><span>Integrated Institute of Professional Management</span></span></a>
         <nav class="nav-links" data-nav-links aria-label="Main navigation">
           <a href="index.html" data-nav="home">Home</a><a href="programmes.html" data-nav="programmes">Programmes</a><a href="membership.html" data-nav="membership">Membership</a><a href="elearning.html" data-nav="elearning">E-Learning</a><a href="verification.html" data-nav="verification">Verify</a><a href="corporate.html" data-nav="corporate">Corporate</a><a href="about.html" data-nav="about">About</a><a href="login.html" data-nav="login">Login</a>
         </nav>
-        <div class="nav-actions"><a class="btn btn-primary" href="course-application.html"><i data-lucide="send"></i> Apply</a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></div>
+        <div class="nav-actions"><a class="btn btn-primary" href="course-application.html">Apply</a><button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">Menu</button></div>
       </div>
     </header>
 
     <main>
-      <section class="page-hero">
-        <img src="assets/iipm-application-consultation.png" alt="Nigerian professional completing an IIPM course application">
+      <section class="page-hero application-hero-fast">
         <div class="section-inner">
-          <span class="eyebrow"><i data-lucide="graduation-cap"></i> Course application</span>
+          <span class="eyebrow">Course application</span>
           <h1>Apply for an IIPM certification course.</h1>
           <p>Select your course, preferred delivery option and payment evidence. IIPM can process live cohort admission or online self-study enrollment from this form.</p>
+          <div class="quick-points" aria-label="Application highlights">
+            <span>Live cohort or self-study</span>
+            <span>Course fee preview</span>
+            <span>Payment evidence upload</span>
+          </div>
         </div>
       </section>
 
@@ -37,10 +100,10 @@
               <strong data-selected-course-title>Select a course</strong>
             </div>
             <ul class="plain-list compact-list">
-              <li><i data-lucide="badge-check"></i> Level: <span data-selected-course-type>Choose a course to view the level</span></li>
-              <li><i data-lucide="calendar"></i> Delivery: <span data-selected-course-delivery>Choose a course to view delivery</span></li>
-              <li><i data-lucide="clock"></i> Duration: <span data-selected-course-duration>Choose a course</span></li>
-              <li><i data-lucide="calendar-check"></i> Apply by: <span data-selected-course-deadline>To be advised</span></li>
+              <li><span class="text-icon">•</span> Level: <span data-selected-course-type>Choose a course to view the level</span></li>
+              <li><span class="text-icon">•</span> Delivery: <span data-selected-course-delivery>Choose a course to view delivery</span></li>
+              <li><span class="text-icon">•</span> Duration: <span data-selected-course-duration>Choose a course</span></li>
+              <li><span class="text-icon">•</span> Apply by: <span data-selected-course-deadline>To be advised</span></li>
             </ul>
             <div class="level-fee level-fee-light"><span>Application fee</span><strong data-selected-application-fee>Choose a course</strong></div>
             <div class="fee-stack">
@@ -49,14 +112,14 @@
             </div>
             <h3>Payment details</h3>
             <ul class="plain-list compact-list">
-              <li><i data-lucide="landmark"></i> Account Name: Integrated Institute of Professional Management</li>
-              <li><i data-lucide="hash"></i> Account Number: 0588546395</li>
-              <li><i data-lucide="building-2"></i> Bank: Guaranty Trust Bank PLC</li>
-              <li><i data-lucide="mail"></i> Proof of payment: finance@iipmi.org</li>
+              <li><span class="text-icon">•</span> Account Name: Integrated Institute of Professional Management</li>
+              <li><span class="text-icon">•</span> Account Number: 0588546395</li>
+              <li><span class="text-icon">•</span> Bank: Guaranty Trust Bank PLC</li>
+              <li><span class="text-icon">•</span> Proof of payment: finance@iipmi.org</li>
             </ul>
             <div class="button-stack">
-              <a class="btn btn-primary" href="https://paystack.com/pay/iipmnigeria" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Pay NGN</a>
-              <a class="btn btn-soft" href="https://paystack.com/pay/iipm" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Pay USD</a>
+              <a class="btn btn-primary" href="https://paystack.com/pay/iipmnigeria" target="_blank" rel="noopener">Pay NGN</a>
+              <a class="btn btn-soft" href="https://paystack.com/pay/iipm" target="_blank" rel="noopener">Pay USD</a>
             </div>
           </aside>
 
@@ -97,7 +160,7 @@
               <div class="field"><label for="profile_upload">CV/Profile and Qualifications</label><input id="profile_upload" name="profile_upload" type="file" multiple></div>
               <div class="field full"><label for="notes">Notes or special request</label><textarea id="notes" name="notes" placeholder="Tell us about your preferred cohort, self-study access, sponsorship or any support you need."></textarea></div>
             </div>
-            <div class="button-stack"><button class="btn btn-primary" type="button"><i data-lucide="send"></i> Submit course application</button><a class="btn btn-outline" href="programmes.html"><i data-lucide="arrow-left"></i> Back to programmes</a></div>
+            <div class="button-stack course-apply-actions"><button class="btn btn-primary" type="button">Submit course application</button><a class="btn btn-outline" href="programmes.html">Back to programmes</a></div>
           </form>
         </div>
       </section>
@@ -112,7 +175,6 @@
       </div>
       <div class="footer-bottom">Prototype website structure for IIPM review.</div>
     </footer>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=course-application"></script>
+    <script src="script.js?v=course-application-fast-1"></script>
   </body>
 </html>
